@@ -1,12 +1,24 @@
-import { flightData } from "./flight.data";
+import { flightData } from "./flights.data";
 import styles from "./FlightList.module.scss";
+import { useSearchParams } from "react-router";
+import { QUERY_PARAMS_FLIGHT } from "./flights.constants";
 
 export function FlightList() {
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const selectedFlight = searchParams.get(QUERY_PARAMS_FLIGHT);
+
   return (
     <div className={styles.flight}>
       <ul>
         {flightData.map((item, i) => (
-          <li key={i} className={item.isActive ? styles.active : ""}>
+          <li
+            key={i}
+            className={selectedFlight === item.id ? styles.active : ""}
+            onClick={() => {
+              setSearchParams({ [QUERY_PARAMS_FLIGHT]: item.id });
+            }}
+          >
             <div className={styles.top}>
               <div className={styles.left}>
                 <div

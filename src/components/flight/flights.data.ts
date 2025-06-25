@@ -7,12 +7,11 @@ export interface IFlight {
   cityEnd: string;
   cityStartShort: string;
   cityEndShort: string;
-  isActive?: boolean;
 }
 
 export const flightData = [
   {
-    icon: "  #BB312D",
+    icon: "#BB312D",
     model: "TK143",
     number: 93247,
     id: "TC-JFP",
@@ -22,7 +21,7 @@ export const flightData = [
     cityEndShort: "PEK",
   },
   {
-    icon: " #07338F",
+    icon: "#07338F",
     model: "RN1782",
     number: 7842,
     id: "D-AJFP",
@@ -30,7 +29,6 @@ export const flightData = [
     cityEnd: "Larnaca",
     cityStartShort: "DUB",
     cityEndShort: "LCA",
-    isActive: true,
   },
   {
     icon: "#C3D500",
