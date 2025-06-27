@@ -1,51 +1,30 @@
+@import "./reset.css";
+
 :root {
+  --background-color: #242424;
+  --background-main: #232222;
+  --color: #fff;
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   font-size: 15px;
-
-  color-scheme: light dark;
-  color: #fff;
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  box-sizing: border-box;
-}
+/* .dark {
+  background-color: var(--background-color);
+  color: var(--color);
+} */
 
 body {
   background: url(https://images.unsplash.com/photo-1494806812796-244fe51b774d?q=80&w=2934&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
     no-repeat bottom;
-  padding: 15px;
-  margin: 0;
+
   min-width: 320px;
   height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  color: var(--color);
 }
 
 .wrapper {
   display: flex;
   justify-content: space-between;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }

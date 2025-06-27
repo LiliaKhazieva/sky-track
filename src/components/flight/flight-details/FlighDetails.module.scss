@@ -1,0 +1,184 @@
+.flyDetails {
+  background-color: #1c1c1c;
+  border-radius: 20px;
+  width: 25%;
+  .details {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom right;
+    border-radius: 20px 20px 0 0;
+    height: 30%;
+    position: relative;
+    .heading {
+      background-color: #1c1c1c;
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      border-radius: 8px;
+      padding: 10px;
+      margin: 5%;
+      button {
+        padding: 3px;
+        background-color: #403f3e;
+        border-radius: 50%;
+        &:hover {
+          transform: rotate(90deg);
+          transition: transform 0.4s ease;
+        }
+        > .close {
+          position: relative;
+          width: 18px;
+          height: 18px;
+        }
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        .title {
+          color: #e99e25;
+          font-weight: 700;
+        }
+        .subtitle {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .flyInfo {
+    background-color: #1c1c1c;
+    border-radius: 0 0 10px 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    .infoContent {
+      position: relative;
+      display: flex;
+      gap: 2px;
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      div {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background-color: #232222;
+        gap: 10px;
+        width: 100%;
+        padding: 20px;
+        h2 {
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+    .distance {
+      color: #8b8888;
+      font-size: 13px;
+      background-color: #232222;
+      padding: 15px;
+      .progress {
+        position: relative;
+        width: 100%;
+        height: 2px;
+        margin-bottom: 10px;
+        margin-top: 5px;
+        .progressBar {
+          position: absolute;
+          width: 50%;
+          height: 2px;
+          top: 0;
+          left: 0;
+          background-color: #b45f36;
+        }
+        .scale {
+          position: absolute;
+          width: 50%;
+          height: 2px;
+          top: 0;
+          right: 0;
+          background-color: #403f3e;
+        }
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 20px;
+        }
+      }
+      .distanceStatistic {
+        display: flex;
+        justify-content: space-between;
+        > div {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          > div {
+            width: 3px;
+            height: 3px;
+            background-color: #ff7904;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+    .reisContent {
+      font-size: 14px;
+      color: #8b8888;
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      gap: 3px;
+      > div {
+        padding: 10px;
+        width: 49.5%;
+        background-color: #232222;
+        display: flex;
+        justify-content: space-between;
+        :last-child {
+          color: #fff;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+  .flyInformation {
+    margin-top: 10px;
+    h3 {
+      margin: 0 0 3px 0;
+      background-color: #353434;
+      border-radius: 10px 10px 0 0;
+      padding: 5px 12px;
+      font-size: 14px;
+    }
+    .infoBlock {
+      font-size: 14px;
+      color: #8b8888;
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      gap: 3px;
+      > div {
+        padding: 10px;
+        width: 49.5%;
+        background-color: #232222;
+        display: flex;
+        justify-content: space-between;
+        :last-child {
+          color: #fff;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.container {
+  cursor: pointer;
+  position: fixed;
+  bottom: 50px;
+  right: 28%;
+  background-color: #1c1c1c;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+  &:hover {
+    background-color: #4f4e4e;
+  }
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

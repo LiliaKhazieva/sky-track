@@ -1,0 +1,32 @@
+.flyNav {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #8b8888;
+  display: flex;
+  width: 100%;
+  gap: 3px;
+  :first-child {
+    color: #fff;
+    font-weight: 700;
+    border-radius: 10px 0 0 10px;
+  }
+  :last-child {
+    border-radius: 0 10px 10px 0;
+  }
+  > div {
+    padding: 10px;
+    width: 49.5%;
+    background-color: #232222;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    :last-child {
+      color: #fff;
+      font-weight: 700;
+    }
+    img {
+      width: 20px;
+    }
+  }
+}

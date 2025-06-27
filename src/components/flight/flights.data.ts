@@ -1,53 +1,154 @@
-export interface IFlight {
-  icon: string;
-  model: string;
-  number: number;
-  id: string;
-  cityStart: string;
-  cityEnd: string;
-  cityStartShort: string;
-  cityEndShort: string;
-}
+import type { IFlight } from "../../types/flight.types";
 
-export const flightData = [
+export const FLIGHTS_DATA: IFlight[] = [
   {
-    icon: "#BB312D",
-    model: "TK143",
-    number: 93247,
-    id: "TC-JFP",
-    cityStart: "Sofia",
-    cityEnd: "Beijing",
-    cityStartShort: "SOF",
-    cityEndShort: "PEK",
+    logo: "/src/assets/logos/turkish.svg",
+    airline: "TK143",
+    aircraftReg: "TC-JFP",
+    id: 93247,
+    from: {
+      city: "Sofia",
+      country: "Bulgaria",
+      countryCode: "BG",
+      timezone: "UTC +3",
+      code: "SOF",
+    },
+    to: {
+      city: "Beijing",
+      country: "China",
+      countryCode: "CN",
+      timezone: "UTC +8",
+      code: "PEK",
+    },
+    airplane: {
+      aviaCompany: "Turkish",
+      image: "/src/assets/aircrafts/turkish.png",
+      name: "Airbus A330",
+    },
+    colorGradient: ["#ffdede", "#ffbaba"],
+    route: {
+      speed: 870,
+      altitude: 10600,
+    },
   },
   {
-    icon: "#07338F",
-    model: "RN1782",
-    number: 7842,
-    id: "D-AJFP",
-    cityStart: "Dublin",
-    cityEnd: "Larnaca",
-    cityStartShort: "DUB",
-    cityEndShort: "LCA",
+    logo: "/src/assets/logos/ryanair.svg",
+    airline: "RN1782",
+    aircraftReg: "D-AISP",
+    id: 7842,
+    from: {
+      city: "Dublin",
+      country: "Ireland",
+      countryCode: "IE",
+      timezone: "UTC +1",
+      code: "DUB",
+    },
+    to: {
+      city: "Larnaca",
+      country: "Cyprus",
+      countryCode: "CY",
+      timezone: "UTC +3",
+      code: "LCA",
+    },
+    airplane: {
+      aviaCompany: "Rinair",
+      image: "/src/assets/aircrafts/ryanair.png",
+      name: "Boeing 737-800",
+    },
+    colorGradient: ["#A1C6E1", "#88B5E0"],
+    route: {
+      speed: 840,
+      altitude: 11200,
+    },
   },
   {
-    icon: "#C3D500",
-    model: "S7124",
-    number: 88015,
-    id: "RA-73415",
-    cityStart: "Nice",
-    cityEnd: "Tbilisi",
-    cityStartShort: "NCE",
-    cityEndShort: "TBS",
+    logo: "/src/assets/logos/s7.svg",
+    airline: "S7124",
+    aircraftReg: "RA-73415",
+    id: 88015,
+    from: {
+      city: "Nice",
+      country: "France",
+      countryCode: "FR",
+      timezone: "UTC +2",
+      code: "NCE",
+    },
+    to: {
+      city: "Tbilisi",
+      country: "Georgia",
+      countryCode: "GE",
+      timezone: "UTC +4",
+      code: "TBS",
+    },
+    airplane: {
+      aviaCompany: "S7",
+      image: "/src/assets/aircrafts/s7.png",
+      name: "Airbus A320neo",
+    },
+    colorGradient: ["#d6ffe5", "#96f2c1"],
+    route: {
+      speed: 860,
+      altitude: 10900,
+    },
   },
   {
-    icon: "#F4821F",
-    model: "LX318",
-    number: 94102,
-    id: "HB-JHK",
-    cityStart: "Porto",
-    cityEnd: "Baky",
-    cityStartShort: "OPO",
-    cityEndShort: "GYD",
+    logo: "/src/assets/logos/swiss.svg",
+    airline: "LX318",
+    aircraftReg: "HB-JHK",
+    id: 94102,
+    from: {
+      city: "Porto",
+      country: "Portugal",
+      countryCode: "PT",
+      timezone: "UTC +1",
+      code: "OPO",
+    },
+    to: {
+      city: "Baku",
+      country: "Azerbaijan",
+      countryCode: "AZ",
+      timezone: "UTC +4",
+      code: "GYD",
+    },
+    airplane: {
+      aviaCompany: "NordWind",
+      image: "/src/assets/aircrafts/swiss.png",
+      name: "Airbus A220-300",
+    },
+    colorGradient: ["#e6e6ff", "#a8b4ff"],
+    route: {
+      speed: 830,
+      altitude: 10700,
+    },
   },
+  // {
+  //   logo: "/src/assets/logos/lufthansa.svg",
+  //   airline: "LH401",
+  //   aircraftReg: "D-AIXD",
+  //   id: 90936,
+  //   from: {
+  //     city: "Burgas",
+  //     country: "Bulgaria",
+  //     countryCode: "BG",
+  //     timezone: "UTC +3",
+  //     code: "BOJ",
+  //   },
+  //   to: {
+  //     city: "Muscat",
+  //     country: "Oman",
+  //     countryCode: "OM",
+  //     timezone: "UTC +4",
+  //     code: "MCT",
+  //   },
+  //   airplane: {
+  //     aviaCompany: "Lufthansa",
+  //     image: "/src/assets/aircrafts/lufthansa.png",
+  //     name: "Airbus A350-900",
+  //   },
+  //   colorGradient: ["#e5f2ff", "#9dd2f9"],
+  //   route: {
+  //     speed: 890,
+  //     altitude: 11300,
+  //   },
+  // },
 ];
