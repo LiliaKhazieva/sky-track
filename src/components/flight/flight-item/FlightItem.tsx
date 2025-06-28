@@ -3,7 +3,13 @@ import styles from "./FlightItem.module.scss";
 import { QUERY_PARAMS_FLIGHT } from "../../../utils/constants/flights.constants";
 import type { IFlight } from "../../../types/flight.types";
 
-export function FlightItem({ item, i }: { item: IFlight; i: number }) {
+interface Props {
+  item: IFlight;
+  i: number;
+  onClick: () => void;
+}
+
+export function FlightItem({ item, i, onClick }: Props) {
   const [searchParams, setSearchParams] = useSearchParams();
   const selectedFlight = searchParams.get(QUERY_PARAMS_FLIGHT);
 
@@ -13,6 +19,7 @@ export function FlightItem({ item, i }: { item: IFlight; i: number }) {
       className={selectedFlight === item.id.toString() ? styles.active : ""}
       onClick={() => {
         setSearchParams({ [QUERY_PARAMS_FLIGHT]: item.id.toString() });
+        onClick();
       }}
     >
       <div className={styles.top}>
@@ -36,7 +43,7 @@ export function FlightItem({ item, i }: { item: IFlight; i: number }) {
         <div className={styles.progress}>
           <div className={styles.progressBar}></div>
           <div className={styles.scale}></div>
-          <img src="/src/assets/icons8-airplane-50.png" alt="airplane_icon" />
+          <img src="/src/assets/airplane.png" alt="airplane_icon" />
         </div>
         <span>{item.to.code}</span>
       </div>
