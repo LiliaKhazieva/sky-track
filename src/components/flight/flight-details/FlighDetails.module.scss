@@ -2,6 +2,19 @@
   background-color: #1c1c1c;
   border-radius: 20px;
   width: 25%;
+  animation: show 1s ease forwards;
+  @keyframes show {
+    0% {
+      transform: translateX(400px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
   .details {
     background-repeat: no-repeat;
     background-size: contain;

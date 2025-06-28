@@ -4,6 +4,18 @@ li {
   background-color: #1c1c1c;
   border: 2px transparent solid;
   transition: border 0.5s ease;
+  animation: show 1s ease forwards;
+  @keyframes show {
+    0% {
+      transform: translateX(-200px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
   &:not(:last-child) {
     margin-bottom: 10px;
   }
