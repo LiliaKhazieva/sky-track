@@ -1,21 +1,9 @@
-.flyDetails {
+.details {
   background-color: #1c1c1c;
   border-radius: 20px;
-  width: 25%;
+  width: 400px;
   animation: show 1s ease forwards;
-  @keyframes show {
-    0% {
-      transform: translateX(400px);
-      opacity: 0;
-    }
-
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-
-  .details {
+  .flyHeader {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom right;
@@ -62,14 +50,14 @@
       }
     }
   }
-  .flyInfo {
+  .flyContent {
     background-color: #1c1c1c;
     border-radius: 0 0 10px 10px;
     padding: 10px;
     display: flex;
     flex-direction: column;
     gap: 3px;
-    .infoContent {
+    .route {
       position: relative;
       display: flex;
       gap: 2px;
@@ -145,7 +133,7 @@
         }
       }
     }
-    .reisContent {
+    .flySheduled {
       font-size: 14px;
       color: #8b8888;
       display: flex;
@@ -193,5 +181,17 @@
         }
       }
     }
+  }
+}
+
+@keyframes show {
+  0% {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
   }
 }

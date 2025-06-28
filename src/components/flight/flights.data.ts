@@ -24,6 +24,7 @@ export const FLIGHTS_DATA: IFlight[] = [
       aviaCompany: "Turkish",
       image: "/src/assets/aircrafts/turkish.png",
       name: "Airbus A330",
+      flag: "/src/assets/flags/turkey-flag.svg",
     },
     colorGradient: ["#ffdede", "#ffbaba"],
     route: {
@@ -54,6 +55,7 @@ export const FLIGHTS_DATA: IFlight[] = [
       aviaCompany: "Rinair",
       image: "/src/assets/aircrafts/ryanair.png",
       name: "Boeing 737-800",
+      flag: "/src/assets/flags/ireland-flag.svg",
     },
     colorGradient: ["#A1C6E1", "#88B5E0"],
     route: {
@@ -84,6 +86,7 @@ export const FLIGHTS_DATA: IFlight[] = [
       aviaCompany: "S7",
       image: "/src/assets/aircrafts/s7.png",
       name: "Airbus A320neo",
+      flag: "/src/assets/flags/russia-flag.svg",
     },
     colorGradient: ["#d6ffe5", "#96f2c1"],
     route: {
@@ -114,6 +117,7 @@ export const FLIGHTS_DATA: IFlight[] = [
       aviaCompany: "NordWind",
       image: "/src/assets/aircrafts/swiss.png",
       name: "Airbus A220-300",
+      flag: "/src/assets/flags/switzerland-flag.svg",
     },
     colorGradient: ["#e6e6ff", "#a8b4ff"],
     route: {
@@ -121,34 +125,35 @@ export const FLIGHTS_DATA: IFlight[] = [
       altitude: 10700,
     },
   },
-  // {
-  //   logo: "/src/assets/logos/lufthansa.svg",
-  //   airline: "LH401",
-  //   aircraftReg: "D-AIXD",
-  //   id: 90936,
-  //   from: {
-  //     city: "Burgas",
-  //     country: "Bulgaria",
-  //     countryCode: "BG",
-  //     timezone: "UTC +3",
-  //     code: "BOJ",
-  //   },
-  //   to: {
-  //     city: "Muscat",
-  //     country: "Oman",
-  //     countryCode: "OM",
-  //     timezone: "UTC +4",
-  //     code: "MCT",
-  //   },
-  //   airplane: {
-  //     aviaCompany: "Lufthansa",
-  //     image: "/src/assets/aircrafts/lufthansa.png",
-  //     name: "Airbus A350-900",
-  //   },
-  //   colorGradient: ["#e5f2ff", "#9dd2f9"],
-  //   route: {
-  //     speed: 890,
-  //     altitude: 11300,
-  //   },
-  // },
+  {
+    logo: "/src/assets/logos/lufthansa.svg",
+    airline: "LH401",
+    aircraftReg: "D-AIXD",
+    id: 90936,
+    from: {
+      city: "Burgas",
+      country: "Bulgaria",
+      countryCode: "BG",
+      timezone: "UTC +3",
+      code: "BOJ",
+    },
+    to: {
+      city: "Muscat",
+      country: "Oman",
+      countryCode: "OM",
+      timezone: "UTC +4",
+      code: "MCT",
+    },
+    airplane: {
+      aviaCompany: "Lufthansa",
+      image: "/src/assets/aircrafts/lufthansa.png",
+      name: "Airbus A350-900",
+      flag: "/src/assets/flags/germany-flag.svg",
+    },
+    colorGradient: ["#e5f2ff", "#9dd2f9"],
+    route: {
+      speed: 890,
+      altitude: 11300,
+    },
+  },
 ];

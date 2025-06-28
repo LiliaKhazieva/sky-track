@@ -2,6 +2,7 @@ export interface IFlightAirplane {
   aviaCompany: string;
   image: string;
   name: string;
+  flag: string;
 }
 
 export interface IFlightRoute {

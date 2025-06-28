@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { FlightDetails } from "./components/flight/flight-details/FlightDetails";
+
 import { FlightList } from "./components/flight/flight-list/FlightList";
 import { ThemeToggle } from "./components/theme-toggle/ThemeToggle";
+import { FlightDetails } from "./components/flight/flight-details/FlightDetails";
 
 function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,8 +16,10 @@ function Home() {
   return (
     <div className="wrapper">
       <FlightList onClick={onClick} />
+      <div className="toggle">
+        <ThemeToggle />
+      </div>
       <FlightDetails isOpen={isOpen} />
-      <ThemeToggle />
     </div>
   );
 }

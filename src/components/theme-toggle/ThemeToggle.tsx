@@ -4,7 +4,7 @@ import styles from "./Theme.module.scss";
 export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
   return (
-    <div className={styles.container}>
+    <div className={styles.toggle}>
       <button onClick={toggleTheme}>
         {theme === "dark" ? (
           <img src="/moon.svg" alt="moon" />

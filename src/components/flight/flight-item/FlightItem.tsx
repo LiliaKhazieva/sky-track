@@ -43,7 +43,7 @@ export function FlightItem({ item, i, onClick }: Props) {
         <div className={styles.progress}>
           <div className={styles.progressBar}></div>
           <div className={styles.scale}></div>
-          <img src="/src/assets/airplane.png" alt="airplane_icon" />
+          <img src="/src/assets/airplane.png" alt="airplane-icon" />
         </div>
         <span>{item.to.code}</span>
       </div>

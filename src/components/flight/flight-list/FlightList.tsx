@@ -10,7 +10,7 @@ export function FlightList({ onClick }: Props) {
     <div className={styles.flight}>
       <ul>
         {FLIGHTS_DATA.map((item, i) => (
-          <FlightItem item={item} i={i} onClick={onClick} />
+          <FlightItem key={i} item={item} i={i} onClick={onClick} />
         ))}
       </ul>
     </div>
