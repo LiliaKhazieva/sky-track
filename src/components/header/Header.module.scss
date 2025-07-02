@@ -1,0 +1,68 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  .logo {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    img {
+      width: 70px;
+    }
+  }
+  .wrapper {
+    width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    background-color: #18171fd1;
+    box-shadow: inset 0 0 20px -5px rgba(255, 255, 255, 0.5);
+    .list {
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      @media (max-width: 900px) {
+        display: none;
+      }
+      .item {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 10px;
+        &:first-child {
+          color: #f7760cd1;
+        }
+      }
+    }
+    .burgerBtn {
+      display: none;
+      @media (max-width: 900px) {
+        display: block;
+      }
+    }
+  }
+  .icons {
+    display: flex;
+    gap: 10px;
+    @media (max-width: 900px) {
+      display: none;
+    }
+    .like {
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      background-color: #18171fd1;
+      box-shadow: inset 0 0 20px -5px rgba(255, 255, 255, 0.3);
+      padding: 8px;
+      border-radius: 50%;
+      transition: background-color 0.2s ease;
+    }
+  }
+}

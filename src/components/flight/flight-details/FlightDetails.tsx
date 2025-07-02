@@ -9,6 +9,7 @@ import { FlightInformation } from "./FlightInformation";
 import { FlightScheduled } from "./FlightScheduled";
 import { FlyDistance } from "./FlyDistance";
 import { FlyRoute } from "./FlyRoute";
+import { useMemo } from "react";
 
 interface Props {
   isOpen: boolean;
@@ -17,9 +18,11 @@ interface Props {
 export function FlightDetails({ isOpen }: Props) {
   const [searchParams] = useSearchParams();
   const selectedFlight = searchParams.get(QUERY_PARAMS_FLIGHT);
-  const flight = FLIGHTS_DATA.find(
-    (flight) => flight.id.toString() === selectedFlight
-  )!;
+  const flight = useMemo(
+    () =>
+      FLIGHTS_DATA.find((flight) => flight.id.toString() === selectedFlight)!,
+    [selectedFlight]
+  );
   return (
     isOpen && (
       <div className={styles.details}>

@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { FlightList } from "./components/flight/flight-list/FlightList";
-import { ThemeToggle } from "./components/theme-toggle/ThemeToggle";
 import { FlightDetails } from "./components/flight/flight-details/FlightDetails";
+import Header from "./components/header/Header";
 
 function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,17 +10,15 @@ function Home() {
     setIsOpen(true);
   };
 
-  useEffect(() => {
-    history.replaceState(null, "", location.pathname);
-  }, []);
   return (
-    <div className="wrapper">
-      <FlightList onClick={onClick} />
-      <div className="toggle">
-        <ThemeToggle />
+    <>
+      <Header />
+      <div className="wrapper">
+        <FlightList onClick={onClick} />
+        <div className="filters"></div>
+        <FlightDetails isOpen={isOpen} />
       </div>
-      <FlightDetails isOpen={isOpen} />
-    </div>
+    </>
   );
 }
 

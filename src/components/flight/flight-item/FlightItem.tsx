@@ -2,21 +2,40 @@ import { useSearchParams } from "react-router";
 import styles from "./FlightItem.module.scss";
 import { QUERY_PARAMS_FLIGHT } from "../../../utils/constants/flights.constants";
 import type { IFlight } from "../../../types/flight.types";
+import { LikeToggle } from "../../like-toggle/LikeToggle";
+import { useAppDispatch } from "../../../hooks/useAppDispatch";
+import { useAppSelector } from "../../../hooks/useAppSelector";
+import {
+  addFavorite,
+  removeFavorite,
+} from "../../../store/favorites/favorites.slice";
+import { Heart } from "lucide-react";
 
 interface Props {
   item: IFlight;
-  i: number;
   onClick: () => void;
 }
 
-export function FlightItem({ item, i, onClick }: Props) {
+export function FlightItem({ item, onClick }: Props) {
   const [searchParams, setSearchParams] = useSearchParams();
   const selectedFlight = searchParams.get(QUERY_PARAMS_FLIGHT);
+  const dispatch = useAppDispatch();
+  const favorites = useAppSelector((state) => state.favorites);
+  const isFavorite = favorites.favorites.includes(item.id.toString());
+
+  const handleToggleFavorite = () => {
+    if (isFavorite) {
+      dispatch(removeFavorite(item.id.toString()));
+    } else {
+      dispatch(addFavorite(item.id.toString()));
+    }
+  };
 
   return (
     <li
-      key={i}
-      className={selectedFlight === item.id.toString() ? styles.active : ""}
+      className={`${styles.item} ${
+        selectedFlight === item.id.toString() ? styles.active : ""
+      }`}
       onClick={() => {
         setSearchParams({ [QUERY_PARAMS_FLIGHT]: item.id.toString() });
         onClick();
@@ -46,6 +65,13 @@ export function FlightItem({ item, i, onClick }: Props) {
           <img src="/src/assets/airplane.png" alt="airplane-icon" />
         </div>
         <span>{item.to.code}</span>
+        <div onClick={handleToggleFavorite} style={{ marginTop: "5px" }}>
+          {isFavorite ? (
+            <Heart color="#ea5c1f" fill="#ea5c1f" size={30} />
+          ) : (
+            <Heart color="#fff" size={30} />
+          )}
+        </div>
       </div>
     </li>
   );

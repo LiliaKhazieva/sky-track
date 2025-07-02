@@ -1,17 +1,17 @@
 .details {
-  background-color: #1c1c1c;
-  border-radius: 20px;
+  border-radius: 10px;
   width: 400px;
   animation: show 1s ease forwards;
   .flyHeader {
     background-repeat: no-repeat;
+    background-position: bottom;
     background-size: contain;
-    background-position: bottom right;
     border-radius: 20px 20px 0 0;
     height: 30%;
     position: relative;
     .heading {
-      background-color: #1c1c1c;
+      background-color: #18171ff7;
+      box-shadow: inset 0 0 20px -5px rgba(255, 255, 255, 0.7);
       position: absolute;
       z-index: 2;
       top: 0;
@@ -51,7 +51,8 @@
     }
   }
   .flyContent {
-    background-color: #1c1c1c;
+    background-color: #18171f;
+    box-shadow: inset 0 0 20px -5px rgba(255, 255, 255, 0.2);
     border-radius: 0 0 10px 10px;
     padding: 10px;
     display: flex;
@@ -72,7 +73,8 @@
         justify-content: center;
         flex-direction: column;
         align-items: center;
-        background-color: #232222;
+        box-shadow: inset 0 0 20px -5px rgba(255, 255, 255, 0.3);
+        background-color: #23222289;
         gap: 10px;
         width: 100%;
         padding: 20px;
@@ -85,7 +87,8 @@
     .distance {
       color: #8b8888;
       font-size: 13px;
-      background-color: #232222;
+      box-shadow: inset 0 0 20px -5px rgba(255, 255, 255, 0.3);
+      background-color: #2322226d;
       padding: 15px;
       .progress {
         position: relative;
@@ -143,7 +146,8 @@
       > div {
         padding: 10px;
         width: 49.5%;
-        background-color: #232222;
+        box-shadow: inset 0 0 20px -5px rgba(255, 255, 255, 0.4);
+        background-color: #2322227d;
         display: flex;
         justify-content: space-between;
         :last-child {
@@ -158,6 +162,7 @@
     h3 {
       margin: 0 0 3px 0;
       background-color: #353434;
+      box-shadow: inset 0 0 20px -5px rgba(255, 255, 255, 0.3);
       border-radius: 10px 10px 0 0;
       padding: 5px 12px;
       font-size: 14px;
@@ -173,6 +178,7 @@
         padding: 10px;
         width: 49.5%;
         background-color: #232222;
+        box-shadow: inset 0 0 20px -5px rgba(255, 255, 255, 0.3);
         display: flex;
         justify-content: space-between;
         :last-child {
