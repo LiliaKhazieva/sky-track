@@ -2,7 +2,6 @@ import { useSearchParams } from "react-router";
 import styles from "./FlightItem.module.scss";
 import { QUERY_PARAMS_FLIGHT } from "../../../utils/constants/flights.constants";
 import type { IFlight } from "../../../types/flight.types";
-import { LikeToggle } from "../../like-toggle/LikeToggle";
 import { useAppDispatch } from "../../../hooks/useAppDispatch";
 import { useAppSelector } from "../../../hooks/useAppSelector";
 import {
@@ -13,7 +12,7 @@ import { Heart } from "lucide-react";
 
 interface Props {
   item: IFlight;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 export function FlightItem({ item, onClick }: Props) {
@@ -38,7 +37,7 @@ export function FlightItem({ item, onClick }: Props) {
       }`}
       onClick={() => {
         setSearchParams({ [QUERY_PARAMS_FLIGHT]: item.id.toString() });
-        onClick();
+        onClick;
       }}
     >
       <div className={styles.top}>
@@ -67,9 +66,9 @@ export function FlightItem({ item, onClick }: Props) {
         <span>{item.to.code}</span>
         <div onClick={handleToggleFavorite} style={{ marginTop: "5px" }}>
           {isFavorite ? (
-            <Heart color="#ea5c1f" fill="#ea5c1f" size={30} />
+            <Heart color="#ea5c1f" fill="#ea5c1f" size={35} />
           ) : (
-            <Heart color="#fff" size={30} />
+            <Heart color="#fff" size={35} />
           )}
         </div>
       </div>

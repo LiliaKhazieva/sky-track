@@ -1,20 +1,10 @@
-.list {
+.select {
   padding: 10px;
   background-color: #18171fe0;
-  box-shadow: inset 0 0 20px -5px rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 0 20px -5px rgba(255, 255, 255, 0.5);
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  .item {
-    background-color: transparent;
-    display: flex;
-    justify-content: space-between;
-    gap: 2px;
-    padding: 5px;
-    &:first-child {
-      border: #ff8502c1 1px solid;
-      box-shadow: inset 0 0 20px -5px #ae5d08c1;
-      border-radius: 10px;
-    }
-  }
+  border-radius: 10px;
+  outline: none;
 }

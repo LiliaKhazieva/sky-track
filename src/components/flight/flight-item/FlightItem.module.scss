@@ -1,4 +1,5 @@
 .item {
+  list-style: none;
   padding: 10px;
   border-radius: 10px;
   border: #ffffff41 1px solid;
@@ -6,9 +7,6 @@
   box-shadow: inset 0 0 20px -5px rgba(255, 255, 255, 0.5);
   transition: all 0.5s ease;
   animation: show 1s ease forwards;
-  &:not(:last-child) {
-    margin-bottom: 10px;
-  }
   .top {
     display: flex;
     justify-content: space-between;

@@ -6,15 +6,11 @@ import Select from "../../filters/Filters";
 
 interface Props {
   onClick: () => void;
-}
-const options = [
-  { value: "All", label: "All" },
-  { value: "Bulgaria", label: "Bulgaria" },
-  { value: "France", label: "France" },
-];
 
-export function FlightList({ onClick }: Props) {
-  const [selectedValue, setSelectedValue] = useState<string>("");
+  selectedValue: string;
+}
+
+export function FlightList({ onClick, selectedValue }: Props) {
   const flightCont = useMemo(() => {
     if (selectedValue === "All" || !selectedValue) {
       return FLIGHTS_DATA;
@@ -27,12 +23,7 @@ export function FlightList({ onClick }: Props) {
 
   return (
     <div className={styles.flight}>
-      <Select
-        options={options}
-        selectedValue={selectedValue}
-        setSelectedValue={setSelectedValue}
-      />
-      <ul>
+      <ul className={styles.list}>
         {flightCont.map((item) => (
           <FlightItem key={item.id} item={item} onClick={onClick} />
         ))}

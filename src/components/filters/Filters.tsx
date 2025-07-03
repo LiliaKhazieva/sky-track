@@ -1,4 +1,4 @@
-import React from "react";
+import styles from "./Filters.module.scss";
 
 interface SelectProps {
   options: { value: string; label: string }[];
@@ -16,7 +16,11 @@ const Select: React.FC<SelectProps> = ({
   };
 
   return (
-    <select value={selectedValue} onChange={handleChange}>
+    <select
+      className={styles.select}
+      value={selectedValue}
+      onChange={handleChange}
+    >
       {options.map((option) => (
         <option key={option.value} value={option.value}>
           {option.label}
