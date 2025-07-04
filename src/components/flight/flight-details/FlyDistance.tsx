@@ -1,12 +1,14 @@
+import { ProgressBar } from "../../progress-bar/ProgressBar";
 import styles from "./FlighDetails.module.scss";
-export function FlyDistance() {
+
+interface Props {
+  departureTime: string;
+  arrivalTime: string;
+}
+export function FlyDistance({ departureTime, arrivalTime }: Props) {
   return (
     <div className={styles.distance}>
-      <div className={styles.progress}>
-        <div className={styles.progressBar}></div>
-        <div className={styles.scale}></div>
-        <img src="/src/assets/airplane.png" alt="airplane_icon" />
-      </div>
+      <ProgressBar departureTime={departureTime} arrivalTime={arrivalTime} />
       <div className={styles.distanceStatistic}>
         <div>
           <span>2 715 km</span>

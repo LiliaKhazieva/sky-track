@@ -1,16 +1,12 @@
 import styles from "./Filters.module.scss";
 
-interface SelectProps {
+interface Props {
   options: { value: string; label: string }[];
   selectedValue: string;
-  setSelectedValue: (e: any) => void;
+  setSelectedValue: (e: string) => void;
 }
 
-const Select: React.FC<SelectProps> = ({
-  options,
-  selectedValue,
-  setSelectedValue,
-}) => {
+export function Select({ options, selectedValue, setSelectedValue }: Props) {
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedValue(event.target.value);
   };
@@ -28,6 +24,4 @@ const Select: React.FC<SelectProps> = ({
       ))}
     </select>
   );
-};
-
-export default Select;
+}

@@ -1,12 +1,10 @@
 import { FLIGHTS_DATA } from "../flights.data";
 import styles from "./FlightList.module.scss";
 import { FlightItem } from "../flight-item/FlightItem";
-import { useMemo, useState } from "react";
-import Select from "../../filters/Filters";
+import { useMemo } from "react";
 
 interface Props {
   onClick: () => void;
-
   selectedValue: string;
 }
 

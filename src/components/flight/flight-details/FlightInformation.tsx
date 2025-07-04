@@ -10,7 +10,7 @@ export function FlightInformation({ flight }: { flight: IFlight }) {
           <span>{flight?.airplane.name}</span>
         </div>
         <div>
-          <span>🇮🇪 Ireland</span>
+          <span>🇮🇪 {flight.from.city}</span>
         </div>
         <div>
           <span>Speed</span>

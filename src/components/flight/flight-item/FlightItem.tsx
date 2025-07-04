@@ -9,6 +9,7 @@ import {
   removeFavorite,
 } from "../../../store/favorites/favorites.slice";
 import { Heart } from "lucide-react";
+import { ProgressBar } from "../../progress-bar/ProgressBar";
 
 interface Props {
   item: IFlight;
@@ -18,9 +19,13 @@ interface Props {
 export function FlightItem({ item, onClick }: Props) {
   const [searchParams, setSearchParams] = useSearchParams();
   const selectedFlight = searchParams.get(QUERY_PARAMS_FLIGHT);
+
   const dispatch = useAppDispatch();
   const favorites = useAppSelector((state) => state.favorites);
   const isFavorite = favorites.favorites.includes(item.id.toString());
+
+  const departureTime = item.departureTime;
+  const arrivalTime = item.arrivalTime;
 
   const handleToggleFavorite = () => {
     if (isFavorite) {
@@ -58,17 +63,13 @@ export function FlightItem({ item, onClick }: Props) {
       </div>
       <div className={styles.bottom}>
         <span>{item.from.code}</span>
-        <div className={styles.progress}>
-          <div className={styles.progressBar}></div>
-          <div className={styles.scale}></div>
-          <img src="/src/assets/airplane.png" alt="airplane-icon" />
-        </div>
+        <ProgressBar departureTime={departureTime} arrivalTime={arrivalTime} />
         <span>{item.to.code}</span>
         <div onClick={handleToggleFavorite} style={{ marginTop: "5px" }}>
           {isFavorite ? (
-            <Heart color="#ea5c1f" fill="#ea5c1f" size={35} />
+            <Heart color="#ea5c1f" fill="#ea5c1f" size={30} />
           ) : (
-            <Heart color="#fff" size={35} />
+            <Heart color="#fff" size={30} />
           )}
         </div>
       </div>

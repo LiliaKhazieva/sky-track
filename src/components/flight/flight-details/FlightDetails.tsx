@@ -46,7 +46,10 @@ export function FlightDetails({ isOpen }: Props) {
         </div>
         <div className={styles.flyContent}>
           <FlyRoute flight={flight} />
-          <FlyDistance />
+          <FlyDistance
+            arrivalTime={flight?.arrivalTime}
+            departureTime={flight?.departureTime}
+          />
           <FlightScheduled />
           <FlightInformation flight={flight} />
           <FlightNav />

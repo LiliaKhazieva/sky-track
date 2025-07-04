@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { act } from "react";
-
-const LS_KEY = "favorites";
+import { LS_KEY } from "../../utils/constants/flights.constants";
+import type { IFavoritesState } from "../../types/favorites.types";
 
 export const getFavoritesFromLacalStorage = () => {
   const favorites = localStorage.getItem(LS_KEY);
@@ -17,10 +16,6 @@ export const getFavoritesFromLacalStorage = () => {
 const saveFavoritesLocalStore = (favorites: string[]) => {
   localStorage.setItem(LS_KEY, JSON.stringify(favorites));
 };
-
-interface IFavoritesState {
-  favorites: string[];
-}
 
 const initialState: IFavoritesState = {
   favorites: getFavoritesFromLacalStorage(),
@@ -48,4 +43,5 @@ const favoritesSlice = createSlice({
 
 export const { addFavorite, removeFavorite, clearFavorites } =
   favoritesSlice.actions;
+
 export const favoritesReducer = favoritesSlice.reducer;

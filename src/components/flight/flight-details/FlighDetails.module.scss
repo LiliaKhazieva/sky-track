@@ -90,37 +90,8 @@
       box-shadow: inset 0 0 20px -5px rgba(255, 255, 255, 0.3);
       background-color: #2322226d;
       padding: 15px;
-      .progress {
-        position: relative;
-        width: 100%;
-        height: 2px;
-        margin-bottom: 10px;
-        margin-top: 5px;
-        .progressBar {
-          position: absolute;
-          width: 50%;
-          height: 2px;
-          top: 0;
-          left: 0;
-          background-color: #b45f36;
-        }
-        .scale {
-          position: absolute;
-          width: 50%;
-          height: 2px;
-          top: 0;
-          right: 0;
-          background-color: #403f3e;
-        }
-        img {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 20px;
-        }
-      }
       .distanceStatistic {
+        padding-top: 20px;
         display: flex;
         justify-content: space-between;
         > div {

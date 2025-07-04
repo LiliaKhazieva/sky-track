@@ -4,7 +4,6 @@ import { FLIGHTS_DATA } from "../components/flight/flights.data";
 import Header from "../components/header/Header";
 import { useAppSelector } from "../hooks/useAppSelector";
 import s from "./Favorites.module.scss";
-import { Plane } from "lucide-react";
 
 export function Favorites() {
   const favorites = useAppSelector((state) => state.favorites);

@@ -26,6 +26,8 @@ export interface IFlight {
   colorGradient: [string, string];
   airline: string;
   aircraftReg: string;
+  departureTime: string;
+  arrivalTime: string;
   from: IFlightLocation;
   to: IFlightLocation;
 }
