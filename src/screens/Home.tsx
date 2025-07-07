@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { FlightList } from "../components/flight/flight-list/FlightList";
 import { FlightDetails } from "../components/flight/flight-details/FlightDetails";
 import Header from "../components/header/Header";
 import { Select } from "../components/filters/Filters";
 import { useSearchParams } from "react-router";
+import { Pleloader } from "../components/preloader/Pleloader";
 
 const options = [
   { value: "All", label: "All" },
@@ -16,16 +17,32 @@ function Home() {
   const [searchParams] = useSearchParams();
   const [isOpen, setIsOpen] = useState(false);
   const [selectedValue, setSelectedValue] = useState<string>("");
+  const [isLoading, setIsLoading] = useState(true);
   const onClick = () => {
     setIsOpen(!isOpen);
   };
+
+  useEffect(() => {
+    // Имитация загрузки данных
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+  }, []);
 
   return (
     <>
       <Header />
 
       <div className="wrapper">
-        <FlightList onClick={onClick} selectedValue={selectedValue} />
+        {isLoading ? (
+          <Pleloader />
+        ) : (
+          <FlightList
+            onClick={onClick}
+            selectedValue={selectedValue}
+            loading={isLoading}
+          />
+        )}
         <div className="filters">
           <Select
             options={options}
