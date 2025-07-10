@@ -1,12 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { FlightList } from "../components/flight/flight-list/FlightList";
 import { FlightDetails } from "../components/flight/flight-details/FlightDetails";
 import Header from "../components/header/Header";
 import { Select } from "../components/filters/Filters";
 import { useSearchParams } from "react-router";
-import { FLIGHTS_DATA } from "../components/flight/flights.data";
-import type { IFlight } from "../types/flight.types";
 
 const sortByCountry = [
   "All airlines",
@@ -25,17 +23,9 @@ function Home() {
   const [selectedValue, setSelectedValue] = useState<string>(options[0]);
   const [selectedSort, setSelectedSort] = useState<string>(sortByCountry[0]);
 
-  const [isLoading, setIsLoading] = useState(true);
   const onClick = () => {
     setIsOpen(!isOpen);
   };
-
-  useEffect(() => {
-    // Имитация загрузки данных
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
-  }, []);
 
   return (
     <>

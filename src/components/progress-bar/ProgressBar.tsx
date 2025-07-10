@@ -41,7 +41,7 @@ export function ProgressBar({ departureTime, arrivalTime }: Props) {
   return (
     <div className={s.progress}>
       <div className={s.progressBar}></div>
-      {/* {<div className={s.label}>{label}</div>} // в доработке */}
+      {<div className={s.label}>{label}</div>}
       <div className={s.scale} style={{ width: `${progress}%` }}>
         <img src="/src/assets/airplane.png" alt="airplane-icon" />
       </div>
