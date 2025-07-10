@@ -1,11 +1,46 @@
-.select {
+.selected {
   padding: 10px;
-  background-color: #18171fe0;
-  box-shadow: inset 0 0 20px -5px rgba(255, 255, 255, 0.5);
+  background-color: #1f1e24f5;
+  box-shadow: inset 0 0 10px -5px rgba(255, 255, 255, 0.5);
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   border-radius: 10px;
   outline: none;
-  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 170px;
+  cursor: pointer;
+}
+
+.select {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  z-index: 1000;
+  margin-top: 5px;
+  background-color: #222226f8;
+  box-shadow: inset 0 0 10px -5px rgba(255, 255, 255, 0.3);
+  width: 170px;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 10px;
+
+  li {
+    padding: 10px;
+    cursor: pointer;
+    &:hover {
+      background-color: rgb(253, 142, 83);
+      box-shadow: inset 0 0 20px -5px rgba(255, 125, 4, 0.584);
+      color: #18171ff8;
+      border-radius: 10px;
+    }
+  }
+}
+
+.show {
+  display: block;
+  opacity: 1;
 }

@@ -16,6 +16,7 @@ body {
     no-repeat bottom;
   /* height: 1000px; */
   min-width: 320px;
+  height: 100vh;
   margin: 0;
   color: var(--color);
   background-color: #1b1d24;
@@ -37,6 +38,15 @@ body {
     align-items: center;
     padding: 10px;
     gap: 10px;
+  }
+  .leftSection {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .filters {
+      display: flex;
+      gap: 10px;
+    }
   }
 }
 

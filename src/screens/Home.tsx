@@ -5,19 +5,26 @@ import { FlightDetails } from "../components/flight/flight-details/FlightDetails
 import Header from "../components/header/Header";
 import { Select } from "../components/filters/Filters";
 import { useSearchParams } from "react-router";
-import { Pleloader } from "../components/preloader/Pleloader";
-import { Skeleton } from "../components/skeleton/Skeleton";
+import { FLIGHTS_DATA } from "../components/flight/flights.data";
+import type { IFlight } from "../types/flight.types";
 
-const options = [
-  { value: "All", label: "All" },
-  { value: "Bulgaria", label: "Bulgaria" },
-  { value: "France", label: "France" },
+const sortByCountry = [
+  "All airlines",
+  "Turkey",
+  "Ireland",
+  "Russia",
+  "Switzerland",
+  "Germany",
 ];
+
+const options = ["All", "Bulgaria", "France", "Portugal"];
 
 function Home() {
   const [searchParams] = useSearchParams();
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedValue, setSelectedValue] = useState<string>("");
+  const [selectedValue, setSelectedValue] = useState<string>(options[0]);
+  const [selectedSort, setSelectedSort] = useState<string>(sortByCountry[0]);
+
   const [isLoading, setIsLoading] = useState(true);
   const onClick = () => {
     setIsOpen(!isOpen);
@@ -35,21 +42,27 @@ function Home() {
       <Header />
 
       <div className="wrapper">
-        <div>
-          <Select
-            options={options}
-            selectedValue={selectedValue}
-            setSelectedValue={setSelectedValue}
-          />
+        <div className="leftSection">
+          <div className="filters">
+            {" "}
+            <Select
+              options={options}
+              selectedValue={selectedValue}
+              setSelectedValue={setSelectedValue}
+            />
+            <Select
+              options={sortByCountry}
+              selectedValue={selectedSort}
+              setSelectedValue={setSelectedSort}
+            />
+          </div>
           <FlightList
             onClick={onClick}
             selectedValue={selectedValue}
-            loading={isLoading}
+            selectedSort={selectedSort}
           />
         </div>
-        {searchParams.size !== 0 && (
-          <FlightDetails isOpen={true} onClick={onClick} />
-        )}
+        {searchParams.size !== 0 && <FlightDetails isOpen={true} />}
       </div>
     </>
   );

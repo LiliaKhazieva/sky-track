@@ -25,6 +25,7 @@ export interface IFlight {
   logo: string;
   colorGradient: [string, string];
   airline: string;
+  company: string;
   aircraftReg: string;
   departureTime: string;
   arrivalTime: string;

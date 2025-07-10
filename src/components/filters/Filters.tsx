@@ -1,27 +1,42 @@
+import { useState } from "react";
 import styles from "./Filters.module.scss";
+import { ChevronDown } from "lucide-react";
 
 interface Props {
-  options: { value: string; label: string }[];
-  selectedValue: string;
+  options: string[];
+  selectedValue: string | null;
   setSelectedValue: (e: string) => void;
 }
 
 export function Select({ options, selectedValue, setSelectedValue }: Props) {
-  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedValue(event.target.value);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleSelect = (option: string) => {
+    setSelectedValue(option);
+    setIsOpen(false);
   };
 
   return (
-    <select
-      className={styles.select}
-      value={selectedValue}
-      onChange={handleChange}
-    >
-      {options.map((option) => (
-        <option key={option.value} value={option.value}>
-          {option.label}
-        </option>
-      ))}
-    </select>
+    <div style={{ position: "relative" }}>
+      <div className={styles.selected} onClick={() => setIsOpen(!isOpen)}>
+        <span>{selectedValue}</span>
+        <ChevronDown />
+      </div>
+      {isOpen && (
+        <ul
+          className={
+            selectedValue
+              ? `${styles.select} ${styles.show}`
+              : `${styles.select}`
+          }
+        >
+          {options.map((option, i) => (
+            <li key={i} onClick={() => handleSelect(option)}>
+              {option}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 }

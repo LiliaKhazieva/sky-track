@@ -13,10 +13,9 @@ import { useMemo } from "react";
 
 interface Props {
   isOpen: boolean;
-  onClick: () => boolean;
 }
 
-export function FlightDetails({ isOpen, onClick }: Props) {
+export function FlightDetails({ isOpen }: Props) {
   const [searchParams] = useSearchParams();
   const selectedFlight = searchParams.get(QUERY_PARAMS_FLIGHT);
   const flight = useMemo(
@@ -42,7 +41,7 @@ export function FlightDetails({ isOpen, onClick }: Props) {
                 {flight?.airplane.aviaCompany}
               </span>
             </div>
-            <button onClick={onClick}>
+            <button>
               <img className={styles.close} src="/close.svg" alt="close" />
             </button>
           </div>
