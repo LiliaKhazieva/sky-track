@@ -6,6 +6,7 @@ import Header from "../components/header/Header";
 import { Select } from "../components/filters/Filters";
 import { useSearchParams } from "react-router";
 import { Pleloader } from "../components/preloader/Pleloader";
+import { Skeleton } from "../components/skeleton/Skeleton";
 
 const options = [
   { value: "All", label: "All" },
@@ -34,23 +35,21 @@ function Home() {
       <Header />
 
       <div className="wrapper">
-        {isLoading ? (
-          <Pleloader />
-        ) : (
-          <FlightList
-            onClick={onClick}
-            selectedValue={selectedValue}
-            loading={isLoading}
-          />
-        )}
-        <div className="filters">
+        <div>
           <Select
             options={options}
             selectedValue={selectedValue}
             setSelectedValue={setSelectedValue}
           />
+          <FlightList
+            onClick={onClick}
+            selectedValue={selectedValue}
+            loading={isLoading}
+          />
         </div>
-        {searchParams.size !== 0 && <FlightDetails isOpen={true} />}
+        {searchParams.size !== 0 && (
+          <FlightDetails isOpen={true} onClick={onClick} />
+        )}
       </div>
     </>
   );

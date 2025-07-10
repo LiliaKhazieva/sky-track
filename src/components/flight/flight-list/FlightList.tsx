@@ -11,7 +11,7 @@ interface Props {
 }
 
 export function FlightList({ onClick, selectedValue, loading }: Props) {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const flightCont = useMemo(() => {
     if (selectedValue === "All" || !selectedValue) {
       return FLIGHTS_DATA;
@@ -22,12 +22,12 @@ export function FlightList({ onClick, selectedValue, loading }: Props) {
     }
   }, [selectedValue]);
 
-  // useEffect(() => {
-  //   // Имитация загрузки данных
-  //   setTimeout(() => {
-  //     setIsLoading(false);
-  //   }, 1000);
-  // }, []);
+  useEffect(() => {
+    // Имитация загрузки данных
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+  }, []);
 
   return (
     <div className={styles.flight}>
@@ -36,7 +36,7 @@ export function FlightList({ onClick, selectedValue, loading }: Props) {
           isLoading ? (
             <Skeleton />
           ) : (
-            <FlightItem key={item.id} item={item} onClick={onClick} />
+            <FlightItem item={item} onClick={onClick} />
           )
         )}
       </ul>

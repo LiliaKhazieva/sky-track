@@ -14,7 +14,7 @@
 body {
   background: url("https://images.unsplash.com/photo-1494806812796-244fe51b774d?q=80&w=2934&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
     no-repeat bottom;
-  height: 1000px;
+  /* height: 1000px; */
   min-width: 320px;
   margin: 0;
   color: var(--color);
@@ -31,10 +31,13 @@ body {
   display: flex;
   gap: 20px;
   justify-content: space-between;
-}
-
-.filters {
-  width: 46%;
+  @media (max-width: 650px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+  }
 }
 
 .toggle {

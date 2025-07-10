@@ -1,6 +1,8 @@
 .flight {
   width: 350px;
-
+  @media (max-width: 750px) {
+    width: 300px;
+  }
   .list {
     display: flex;
     flex-direction: column;
