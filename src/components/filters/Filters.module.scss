@@ -12,6 +12,9 @@
   justify-content: space-between;
   width: 170px;
   cursor: pointer;
+  @media (max-width: 700px) {
+    width: 145px;
+  }
 }
 
 .select {
@@ -29,6 +32,9 @@
   opacity: 0;
   transition: opacity 0.3s ease;
   border-radius: 10px;
+  @media (max-width: 700px) {
+    width: 145px;
+  }
 
   li {
     padding: 10px;

@@ -43,7 +43,7 @@ export default function Header() {
         <button className={styles.burgerBtn} onClick={toggleMenu}>
           <Menu />
         </button>
-        {isOpen && <MenuBurger />}
+        {isOpen && <MenuBurger onToggle={toggleMenu} />}
         <div className={styles.icons}>
           <ThemeToggle />
           <img className={styles.like} src="like.svg" alt="like" />

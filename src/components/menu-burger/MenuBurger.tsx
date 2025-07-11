@@ -7,13 +7,13 @@ import {
   TicketsPlane,
 } from "lucide-react";
 
-export function MenuBurger() {
+export function MenuBurger({ onToggle }: { onToggle: () => void }) {
   return (
     <div className={s.hamburger}>
       <div className={s.logo}>
         SkyTrack
-        <img src="/logot.svg" alt="logo" />
-        <div className={s.btnClose}>
+        <img src="logo.svg" alt="logo" />
+        <div className={s.btnClose} onClick={onToggle}>
           <SquareX />
         </div>
       </div>
