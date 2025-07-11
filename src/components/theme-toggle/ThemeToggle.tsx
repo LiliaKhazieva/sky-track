@@ -7,9 +7,9 @@ export function ThemeToggle() {
     <div className={styles.toggle}>
       <button onClick={toggleTheme}>
         {theme === "dark" ? (
-          <img src="/moon.svg" alt="moon" />
+          <img src="moon.svg" alt="moon" />
         ) : (
-          <img src="/sun.svg" alt="sun" />
+          <img src="sun.svg" alt="sun" />
         )}
       </button>
     </div>

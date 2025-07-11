@@ -15,7 +15,14 @@ const sortByCountry = [
   "Germany",
 ];
 
-const options = ["All", "Bulgaria", "France", "Portugal"];
+const options = [
+  "All",
+  "Bulgaria",
+  "France",
+  "Portugal",
+  "Ireland",
+  "Portugal",
+];
 
 function Home() {
   const [searchParams] = useSearchParams();

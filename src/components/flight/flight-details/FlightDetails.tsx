@@ -33,7 +33,7 @@ export function FlightDetails({ isOpen }: Props) {
             backgroundImage: `linear-gradient(${flight?.colorGradient[0]}, ${flight?.colorGradient[1]})`,
           }}
         >
-          <img src={flight?.airplane.image} alt="" />
+          <img src={flight?.airplane.image} alt="airplane" />
           <div className={styles.heading}>
             <div className={styles.container}>
               <span className={styles.title}>{flight?.airline}</span>
@@ -42,7 +42,7 @@ export function FlightDetails({ isOpen }: Props) {
               </span>
             </div>
             <button>
-              <img className={styles.close} src="/close.svg" alt="close" />
+              <img className={styles.close} src="close.svg" alt="close" />
             </button>
           </div>
         </div>

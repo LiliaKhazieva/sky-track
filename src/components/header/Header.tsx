@@ -20,7 +20,7 @@ export default function Header() {
       <div className={styles.wrapper}>
         <div className={styles.logo}>
           SkyTrack
-          <img src="/logot.svg" alt="logo" />
+          <img src="logo.svg" alt="logo" />
         </div>
         <ul className={styles.list}>
           <li className={styles.item}>
@@ -46,7 +46,7 @@ export default function Header() {
         {isOpen && <MenuBurger />}
         <div className={styles.icons}>
           <ThemeToggle />
-          <img className={styles.like} src="/like.svg" alt="like" />
+          <img className={styles.like} src="like.svg" alt="like" />
         </div>
       </div>
     </header>

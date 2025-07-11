@@ -9,8 +9,20 @@ export function FlightInformation({ flight }: { flight: IFlight }) {
         <div>
           <span>{flight?.airplane.name}</span>
         </div>
-        <div>
-          <span>🇮🇪 {flight.from.city}</span>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "flex-start",
+            gap: "10px",
+            alignItems: "center",
+          }}
+        >
+          <img
+            src={flight.airplane.flag}
+            alt="flag"
+            style={{ width: "20px" }}
+          />
+          <span>{flight.from.city}</span>
         </div>
         <div>
           <span>Speed</span>

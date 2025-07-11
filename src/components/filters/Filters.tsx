@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import styles from "./Filters.module.scss";
 import { ChevronDown } from "lucide-react";
 
@@ -10,6 +10,7 @@ interface Props {
 
 export function Select({ options, selectedValue, setSelectedValue }: Props) {
   const [isOpen, setIsOpen] = useState(false);
+  const selectRef = useRef(null);
 
   const handleSelect = (option: string) => {
     setSelectedValue(option);
@@ -24,6 +25,7 @@ export function Select({ options, selectedValue, setSelectedValue }: Props) {
       </div>
       {isOpen && (
         <ul
+          ref={selectRef}
           className={
             selectedValue
               ? `${styles.select} ${styles.show}`

@@ -25,6 +25,7 @@ export function FlightList({ onClick, selectedValue, selectedSort }: Props) {
     });
   }, [selectedValue, selectedSort]);
 
+  const sum = flightCont.length > 0 ? flightCont : FLIGHTS_DATA;
   console.log(flightCont);
   useEffect(() => {
     // Имитация загрузки данных
@@ -36,7 +37,7 @@ export function FlightList({ onClick, selectedValue, selectedSort }: Props) {
   return (
     <div className={styles.flight}>
       <ul className={styles.list}>
-        {flightCont.map((item) =>
+        {sum.map((item) =>
           isLoading ? (
             <Skeleton />
           ) : (

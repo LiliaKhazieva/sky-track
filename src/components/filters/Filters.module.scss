@@ -16,6 +16,8 @@
 
 .select {
   position: absolute;
+  overflow-y: scroll;
+  height: 150px;
   top: 40px;
   left: 0;
   z-index: 1000;

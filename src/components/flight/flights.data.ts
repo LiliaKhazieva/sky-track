@@ -2,7 +2,7 @@ import type { IFlight } from "../../types/flight.types";
 
 export const FLIGHTS_DATA: IFlight[] = [
   {
-    logo: "/src/assets/logos/turkish.svg",
+    logo: "logos/turkish.svg",
     airline: "TK143",
     company: "Turkey",
     aircraftReg: "TC-JFP",
@@ -25,9 +25,9 @@ export const FLIGHTS_DATA: IFlight[] = [
     },
     airplane: {
       aviaCompany: "Turkish",
-      image: "/src/assets/aircrafts/turkish.png",
+      image: "aircrafts/turkish.png",
       name: "Airbus A330",
-      flag: "/src/assets/flags/turkey-flag.svg",
+      flag: "flags/turkey-flag.svg",
     },
     colorGradient: ["#ffdede", "#ffbaba"],
     route: {
@@ -36,7 +36,7 @@ export const FLIGHTS_DATA: IFlight[] = [
     },
   },
   {
-    logo: "/src/assets/logos/ryanair.svg",
+    logo: "logos/ryanair.svg",
     airline: "RN1782",
     aircraftReg: "D-AISP",
     company: "Ireland",
@@ -59,9 +59,9 @@ export const FLIGHTS_DATA: IFlight[] = [
     },
     airplane: {
       aviaCompany: "Rinair",
-      image: "/src/assets/aircrafts/ryanair.png",
+      image: "aircrafts/ryanair.png",
       name: "Boeing 737-800",
-      flag: "/src/assets/flags/ireland-flag.svg",
+      flag: "flags/ireland-flag.svg",
     },
     colorGradient: ["#A1C6E1", "#88B5E0"],
     route: {
@@ -70,7 +70,7 @@ export const FLIGHTS_DATA: IFlight[] = [
     },
   },
   {
-    logo: "/src/assets/logos/s7.svg",
+    logo: "logos/s7.svg",
     airline: "S7124",
     aircraftReg: "RA-73415",
     company: "Russia",
@@ -93,9 +93,9 @@ export const FLIGHTS_DATA: IFlight[] = [
     },
     airplane: {
       aviaCompany: "S7",
-      image: "/src/assets/aircrafts/s7.png",
+      image: "aircrafts/s7.png",
       name: "Airbus A320neo",
-      flag: "/src/assets/flags/russia-flag.svg",
+      flag: "flags/russia-flag.svg",
     },
     colorGradient: ["#d6ffe5", "#96f2c1"],
     route: {
@@ -104,7 +104,7 @@ export const FLIGHTS_DATA: IFlight[] = [
     },
   },
   {
-    logo: "/src/assets/logos/swiss.svg",
+    logo: "logos/swiss.svg",
     airline: "LX318",
     aircraftReg: "HB-JHK",
     company: "Switzerland",
@@ -127,9 +127,9 @@ export const FLIGHTS_DATA: IFlight[] = [
     },
     airplane: {
       aviaCompany: "NordWind",
-      image: "/src/assets/aircrafts/swiss.png",
+      image: "aircrafts/swiss.png",
       name: "Airbus A220-300",
-      flag: "/src/assets/flags/switzerland-flag.svg",
+      flag: "flags/switzerland-flag.svg",
     },
     colorGradient: ["#e6e6ff", "#a8b4ff"],
     route: {
@@ -138,7 +138,7 @@ export const FLIGHTS_DATA: IFlight[] = [
     },
   },
   {
-    logo: "/src/assets/logos/lufthansa.svg",
+    logo: "logos/lufthansa.svg",
     airline: "LH401",
     aircraftReg: "D-AIXD",
     company: "Germany",
@@ -161,9 +161,77 @@ export const FLIGHTS_DATA: IFlight[] = [
     },
     airplane: {
       aviaCompany: "Lufthansa",
-      image: "/src/assets/aircrafts/lufthansa.png",
+      image: "aircrafts/lufthansa.png",
       name: "Airbus A350-900",
-      flag: "/src/assets/flags/germany-flag.svg",
+      flag: "flags/germany-flag.svg",
+    },
+    colorGradient: ["#e5f2ff", "#9dd2f9"],
+    route: {
+      speed: 890,
+      altitude: 11300,
+    },
+  },
+  {
+    logo: "logos/lufthansa.svg",
+    airline: "LH401",
+    aircraftReg: "D-AIXD",
+    company: "Germany",
+    id: 90931,
+    departureTime: "2025-07-04T12:20:00",
+    arrivalTime: "2025-07-04T15:00:00",
+    from: {
+      city: "Burgas",
+      country: "France",
+      countryCode: "BG",
+      timezone: "UTC +3",
+      code: "BOJ",
+    },
+    to: {
+      city: "Muscat",
+      country: "Oman",
+      countryCode: "OM",
+      timezone: "UTC +4",
+      code: "MCT",
+    },
+    airplane: {
+      aviaCompany: "Lufthansa",
+      image: "aircrafts/lufthansa.png",
+      name: "Airbus A350-900",
+      flag: "flags/germany-flag.svg",
+    },
+    colorGradient: ["#e5f2ff", "#9dd2f9"],
+    route: {
+      speed: 890,
+      altitude: 11300,
+    },
+  },
+  {
+    logo: "logos/lufthansa.svg",
+    airline: "LH401",
+    aircraftReg: "D-AIXD",
+    company: "Turkey",
+    id: 90930,
+    departureTime: "2025-07-04T12:20:00",
+    arrivalTime: "2025-07-04T15:00:00",
+    from: {
+      city: "Burgas",
+      country: "France",
+      countryCode: "BG",
+      timezone: "UTC +3",
+      code: "BOJ",
+    },
+    to: {
+      city: "Muscat",
+      country: "Oman",
+      countryCode: "OM",
+      timezone: "UTC +4",
+      code: "MCT",
+    },
+    airplane: {
+      aviaCompany: "Turkish",
+      image: "aircrafts/turkish.png",
+      name: "Airbus A330",
+      flag: "flags/turkey-flag.svg",
     },
     colorGradient: ["#e5f2ff", "#9dd2f9"],
     route: {

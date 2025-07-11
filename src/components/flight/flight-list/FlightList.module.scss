@@ -4,8 +4,21 @@
     width: 300px;
   }
   .list {
+    height: 80vh;
+    overflow-y: scroll;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    /* Убираем полосу прокрутки */
+    ::-webkit-scrollbar {
+      width: 0; /* Для всех элементов */
+    }
+    /* Стилизуем полосу прокрутки */
+    ::-webkit-scrollbar {
+      width: 7px; /* Ширина полосы */
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: #f9f9fd; /* Цвет полосы */
+    }
   }
 }
