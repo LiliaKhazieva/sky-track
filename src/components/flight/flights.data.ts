@@ -180,7 +180,7 @@ export const FLIGHTS_DATA: IFlight[] = [
     departureTime: "2025-07-04T12:20:00",
     arrivalTime: "2025-07-04T15:00:00",
     from: {
-      city: "Burgas",
+      city: "Nice",
       country: "France",
       countryCode: "BG",
       timezone: "UTC +3",
@@ -221,8 +221,8 @@ export const FLIGHTS_DATA: IFlight[] = [
       code: "BOJ",
     },
     to: {
-      city: "Muscat",
-      country: "Oman",
+      city: "London",
+      country: "China",
       countryCode: "OM",
       timezone: "UTC +4",
       code: "MCT",

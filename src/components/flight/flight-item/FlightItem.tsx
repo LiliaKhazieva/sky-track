@@ -13,10 +13,10 @@ import { ProgressBar } from "../../progress-bar/ProgressBar";
 
 interface Props {
   item: IFlight;
-  onClick?: () => void;
+  handleClick: () => void;
 }
 
-export function FlightItem({ item, onClick }: Props) {
+export function FlightItem({ item, handleClick }: Props) {
   const [searchParams, setSearchParams] = useSearchParams();
   const selectedFlight = searchParams.get(QUERY_PARAMS_FLIGHT);
 
@@ -42,7 +42,7 @@ export function FlightItem({ item, onClick }: Props) {
       }`}
       onClick={() => {
         setSearchParams({ [QUERY_PARAMS_FLIGHT]: item.id.toString() });
-        onClick;
+        handleClick;
       }}
     >
       <div className={styles.top}>

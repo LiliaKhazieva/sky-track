@@ -2,7 +2,6 @@
   position: relative;
   width: 100%;
   height: 2px;
-  margin: 0 10px 0 10px;
   .progressBar {
     position: absolute;
     width: 100%;
@@ -13,10 +12,10 @@
   }
   .label {
     position: absolute;
-    top: -15px;
-    left: 30%;
+    top: -13px;
+    left: 40%;
     font-size: 10px;
-    color: #f7da008e;
+    color: #2a7e04;
   }
   .scale {
     display: flex;

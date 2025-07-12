@@ -28,7 +28,7 @@ export function ProgressBar({ departureTime, arrivalTime }: Props) {
         setProgress(progressPercentage);
         setLabel("");
       } else {
-        // Прибыли
+        // Прибыл
         setProgress(100);
         clearInterval(interval);
         setLabel("Прибыл");

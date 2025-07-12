@@ -4,9 +4,8 @@ import { FlightList } from "../components/flight/flight-list/FlightList";
 import { FlightDetails } from "../components/flight/flight-details/FlightDetails";
 import Header from "../components/header/Header";
 import { Select } from "../components/filters/Filters";
-import { useSearchParams } from "react-router";
 
-const sortByCountry = [
+const sortByCompany = [
   "All airlines",
   "Turkey",
   "Ireland",
@@ -15,51 +14,40 @@ const sortByCountry = [
   "Germany",
 ];
 
-const options = [
-  "All",
-  "Bulgaria",
-  "France",
-  "Portugal",
-  "Ireland",
-  "Portugal",
-];
+const sortByCountry = ["All", "Bulgaria", "France", "Portugal", "Ireland"];
 
 function Home() {
-  const [searchParams] = useSearchParams();
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedValue, setSelectedValue] = useState<string>(options[0]);
-  const [selectedSort, setSelectedSort] = useState<string>(sortByCountry[0]);
-
-  const onClick = () => {
-    setIsOpen(!isOpen);
+  const [isOpen, setIsOpen] = useState(true);
+  const [selectedValue, setSelectedValue] = useState<string>(sortByCountry[0]);
+  const [selectedSort, setSelectedSort] = useState<string>(sortByCompany[0]);
+  const handleClick = () => {
+    setIsOpen(true);
   };
-
   return (
     <>
       <Header />
-
       <div className="wrapper">
         <div className="leftSection">
           <div className="filters">
             {" "}
             <Select
-              options={options}
+              options={sortByCountry}
               selectedValue={selectedValue}
               setSelectedValue={setSelectedValue}
             />
             <Select
-              options={sortByCountry}
+              options={sortByCompany}
               selectedValue={selectedSort}
               setSelectedValue={setSelectedSort}
             />
           </div>
           <FlightList
-            onClick={onClick}
+            handleClick={handleClick}
             selectedValue={selectedValue}
             selectedSort={selectedSort}
           />
         </div>
-        {searchParams.size !== 0 && <FlightDetails isOpen={true} />}
+        {isOpen && <FlightDetails onClose={() => setIsOpen(false)} />}
       </div>
     </>
   );

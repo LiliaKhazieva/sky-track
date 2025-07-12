@@ -18,11 +18,11 @@ export function FlightInformation({ flight }: { flight: IFlight }) {
           }}
         >
           <img
-            src={flight.airplane.flag}
+            src={flight?.airplane.flag}
             alt="flag"
             style={{ width: "20px" }}
           />
-          <span>{flight.from.city}</span>
+          <span>{flight?.from.city}</span>
         </div>
         <div>
           <span>Speed</span>

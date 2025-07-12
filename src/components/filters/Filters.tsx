@@ -10,7 +10,6 @@ interface Props {
 
 export function Select({ options, selectedValue, setSelectedValue }: Props) {
   const [isOpen, setIsOpen] = useState(false);
-  const selectRef = useRef(null);
 
   const handleSelect = (option: string) => {
     setSelectedValue(option);
@@ -25,7 +24,6 @@ export function Select({ options, selectedValue, setSelectedValue }: Props) {
       </div>
       {isOpen && (
         <ul
-          ref={selectRef}
           className={
             selectedValue
               ? `${styles.select} ${styles.show}`

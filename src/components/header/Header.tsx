@@ -9,6 +9,8 @@ import { ThemeToggle } from "../theme-toggle/ThemeToggle";
 import styles from "./Header.module.scss";
 import { useState } from "react";
 import { MenuBurger } from "../menu-burger/MenuBurger";
+import { Link } from "react-router";
+import { PAGE } from "../../config/page.config";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,10 +20,10 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.wrapper}>
-        <div className={styles.logo}>
+        <Link to={PAGE.HOME} className={styles.logo}>
           SkyTrack
           <img src="logo.svg" alt="logo" />
-        </div>
+        </Link>
         <ul className={styles.list}>
           <li className={styles.item}>
             <House width={18} />
@@ -46,7 +48,9 @@ export default function Header() {
         {isOpen && <MenuBurger onToggle={toggleMenu} />}
         <div className={styles.icons}>
           <ThemeToggle />
-          <img className={styles.like} src="like.svg" alt="like" />
+          <Link to={PAGE.FAVORITES}>
+            <img className={styles.like} src="like.svg" alt="like" />
+          </Link>
         </div>
       </div>
     </header>
