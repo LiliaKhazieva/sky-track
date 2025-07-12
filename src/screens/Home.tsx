@@ -20,7 +20,7 @@ function Home() {
   const [isOpen, setIsOpen] = useState(true);
   const [selectedValue, setSelectedValue] = useState<string>(sortByCountry[0]);
   const [selectedSort, setSelectedSort] = useState<string>(sortByCompany[0]);
-  const handleClick = () => {
+  const togglePopup = () => {
     setIsOpen(true);
   };
   return (
@@ -42,7 +42,7 @@ function Home() {
             />
           </div>
           <FlightList
-            handleClick={handleClick}
+            togglePopup={togglePopup}
             selectedValue={selectedValue}
             selectedSort={selectedSort}
           />

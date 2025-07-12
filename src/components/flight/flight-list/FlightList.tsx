@@ -1,19 +1,19 @@
 import { FLIGHTS_DATA } from "../flights.data";
 import styles from "./FlightList.module.scss";
 import { FlightItem } from "../flight-item/FlightItem";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { Skeleton } from "../../skeleton/Skeleton";
 
 interface Props {
   selectedValue: string;
   selectedSort: string;
-  handleClick: () => void;
+  togglePopup: () => void;
 }
 
 export function FlightList({
   selectedValue,
   selectedSort,
-  handleClick,
+  togglePopup,
 }: Props) {
   const [isLoading, setIsLoading] = useState(true);
   const filteredItems =
@@ -37,8 +37,10 @@ export function FlightList({
       <ul className={styles.list}>
         {isLoading
           ? [...Array(5)].map((_) => <Skeleton />)
+          : filteredItems.length === 0
+          ? "Нет рейсов по выбранному фильтру"
           : filteredItems.map((item) => (
-              <FlightItem key={item.id} item={item} handleClick={handleClick} />
+              <FlightItem key={item.id} item={item} togglePopup={togglePopup} />
             ))}
       </ul>
     </div>

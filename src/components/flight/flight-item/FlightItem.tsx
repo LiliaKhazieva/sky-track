@@ -13,10 +13,10 @@ import { ProgressBar } from "../../progress-bar/ProgressBar";
 
 interface Props {
   item: IFlight;
-  handleClick: () => void;
+  togglePopup: () => void;
 }
 
-export function FlightItem({ item, handleClick }: Props) {
+export function FlightItem({ item, togglePopup }: Props) {
   const [searchParams, setSearchParams] = useSearchParams();
   const selectedFlight = searchParams.get(QUERY_PARAMS_FLIGHT);
 
@@ -36,43 +36,47 @@ export function FlightItem({ item, handleClick }: Props) {
   };
 
   return (
-    <li
-      className={`${styles.item} ${
-        selectedFlight === item.id.toString() ? styles.active : ""
-      }`}
-      onClick={() => {
-        setSearchParams({ [QUERY_PARAMS_FLIGHT]: item.id.toString() });
-        handleClick;
-      }}
-    >
-      <div className={styles.top}>
-        <div className={styles.left}>
-          <div className={styles.icon}>
-            <img src={item.logo} alt={item.airline} />
+    <div onClick={togglePopup}>
+      <li
+        className={`${styles.item} ${
+          selectedFlight === item.id.toString() ? styles.active : ""
+        }`}
+        onClick={() => {
+          setSearchParams({ [QUERY_PARAMS_FLIGHT]: item.id.toString() });
+        }}
+      >
+        <div className={styles.top}>
+          <div className={styles.left}>
+            <div className={styles.icon}>
+              <img src={item.logo} alt={item.airline} />
+            </div>
+            <span>{item.airline}</span>
           </div>
-          <span>{item.airline}</span>
+          <div className={styles.right}>
+            <span className={styles.numberFly}>{item.aircraftReg}</span>
+            <span className={styles.numberFly}>{item.id}</span>
+          </div>
         </div>
-        <div className={styles.right}>
-          <span className={styles.numberFly}>{item.aircraftReg}</span>
-          <span className={styles.numberFly}>{item.id}</span>
+        <div className={styles.middle}>
+          <span className={styles.country}>{item.from.city}</span>
+          <span className={styles.country}>{item.to.city}</span>
         </div>
-      </div>
-      <div className={styles.middle}>
-        <span className={styles.country}>{item.from.city}</span>
-        <span className={styles.country}>{item.to.city}</span>
-      </div>
-      <div className={styles.bottom}>
-        <span>{item.from.code}</span>
-        <ProgressBar departureTime={departureTime} arrivalTime={arrivalTime} />
-        <span>{item.to.code}</span>
-        <div onClick={handleToggleFavorite} style={{ marginTop: "5px" }}>
-          {isFavorite ? (
-            <Heart color="#ea5c1f" fill="#ea5c1f" size={30} />
-          ) : (
-            <Heart color="#fff" size={30} />
-          )}
+        <div className={styles.bottom}>
+          <span>{item.from.code}</span>
+          <ProgressBar
+            departureTime={departureTime}
+            arrivalTime={arrivalTime}
+          />
+          <span>{item.to.code}</span>
+          <div onClick={handleToggleFavorite} style={{ marginTop: "5px" }}>
+            {isFavorite ? (
+              <Heart color="#ea5c1f" fill="#ea5c1f" size={30} />
+            ) : (
+              <Heart color="#fff" size={30} />
+            )}
+          </div>
         </div>
-      </div>
-    </li>
+      </li>
+    </div>
   );
 }

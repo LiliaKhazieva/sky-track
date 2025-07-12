@@ -19,6 +19,9 @@ body {
   margin: 0;
   color: var(--color);
   background-color: #1b1d24;
+  @media (max-width: 750px) {
+    height: 100%;
+  }
 }
 
 .dark {
