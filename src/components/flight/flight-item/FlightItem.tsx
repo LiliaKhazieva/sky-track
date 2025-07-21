@@ -13,7 +13,7 @@ import { ProgressBar } from "../../progress-bar/ProgressBar";
 
 interface Props {
   item: IFlight;
-  togglePopup: () => void;
+  togglePopup?: () => void;
 }
 
 export function FlightItem({ item, togglePopup }: Props) {

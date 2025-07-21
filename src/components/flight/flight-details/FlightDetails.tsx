@@ -25,6 +25,7 @@ export function FlightDetails({ onClose }: Props) {
       (flight) => flight.id.toString() === selectedFlight
     )!;
   }, [selectedFlight]);
+  if (!flight) return null;
 
   return (
     <div className={styles.details}>

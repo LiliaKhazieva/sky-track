@@ -1,4 +1,6 @@
 .header {
+  position: relative;
+  z-index: 10;
   display: flex;
   justify-content: space-between;
   gap: 15px;
@@ -19,7 +21,7 @@
     justify-content: space-between;
     align-items: center;
     font-size: 18px;
-    background-color: #18171fd1;
+    background-color: #18171ff7;
     box-shadow: inset 0 0 20px -5px rgba(255, 255, 255, 0.5);
     .list {
       height: 50px;

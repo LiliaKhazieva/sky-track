@@ -29,7 +29,7 @@ export function FlightList({
     // Имитация загрузки данных
     setTimeout(() => {
       setIsLoading(false);
-    }, 1000);
+    }, 500);
   }, []);
 
   return (

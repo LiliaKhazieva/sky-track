@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import styles from "./Filters.module.scss";
 import { ChevronDown } from "lucide-react";
 
