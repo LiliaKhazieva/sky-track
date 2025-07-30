@@ -12,7 +12,6 @@ import { Dot, MapPin } from "lucide-react";
 import { FLIGHTS_DATA } from "../flight/flights.data";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { createSplitCircle } from "../../utils/sky-track-map-utils";
-import { useTheme } from "../../providers/theme/useTheme";
 
 export const solidStyle: LayerProps = {
   id: "route-solid",
@@ -36,7 +35,7 @@ export const dashedStyle: LayerProps = {
   },
 };
 
-export function SkyMap({ data }) {
+export function SkyMap({ data }: { data: any }) {
   const { flight } = useFlight();
   const currentOtherFlightCoordinates = useMemo(
     () =>
@@ -46,7 +45,6 @@ export function SkyMap({ data }) {
     [flight]
   );
   const ref = useRef<MapRef>(null);
-  const { theme } = useTheme();
 
   useEffect(() => {
     if (ref.current && flight) {

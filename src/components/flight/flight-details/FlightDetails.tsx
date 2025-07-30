@@ -9,13 +9,15 @@ import { FlightInformation } from "./FlightInformation";
 import { FlightScheduled } from "./FlightScheduled";
 import { FlyDistance } from "./FlyDistance";
 import { FlyRoute } from "./FlyRoute";
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
+import SkeletonDetails from "../../skeletonDetails/SkeletonDetails";
 
 interface Props {
   onClose: () => void;
 }
 
 export function FlightDetails({ onClose }: Props) {
+  const [isLoading, setIsLoading] = useState(true);
   const [searchParams] = useSearchParams();
   const selectedFlight = searchParams.get(QUERY_PARAMS_FLIGHT);
 
@@ -26,6 +28,13 @@ export function FlightDetails({ onClose }: Props) {
     )!;
   }, [selectedFlight]);
   if (!flight) return null;
+
+  useEffect(() => {
+    // Имитация загрузки данных
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 500);
+  }, []);
 
   return (
     <div className={styles.details}>
@@ -53,16 +62,17 @@ export function FlightDetails({ onClose }: Props) {
           </button>
         </div>
       </div>
-      <div className={styles.flyContent}>
-        <FlyRoute flight={flight} />
-        <FlyDistance
-          arrivalTime={flight?.arrivalTime}
-          departureTime={flight?.departureTime}
-        />
-        <FlightScheduled />
-        <FlightInformation flight={flight} />
-        <FlightNav />
-      </div>
+      {isLoading ? (
+        <SkeletonDetails />
+      ) : (
+        <div className={styles.flyContent}>
+          <FlyRoute flight={flight} />
+          <FlyDistance progress={flight.progress} />
+          <FlightScheduled />
+          <FlightInformation flight={flight} />
+          <FlightNav />
+        </div>
+      )}
     </div>
   );
 }

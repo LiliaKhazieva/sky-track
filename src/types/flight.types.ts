@@ -20,7 +20,7 @@ export interface IFlightLocation {
 }
 
 export interface IFlight {
-  id: number;
+  id: string;
   airplane: IFlightAirplane;
   route: IFlightRoute;
   logo: string;
@@ -28,8 +28,6 @@ export interface IFlight {
   airline: string;
   company: string;
   aircraftReg: string;
-  departureTime: string;
-  arrivalTime: string;
   from: IFlightLocation;
   to: IFlightLocation;
   progress: number;

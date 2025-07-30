@@ -1,9 +1,10 @@
 import { useMemo } from "react";
-import { FlightItem } from "../components/flight/flight-item/FlightItem";
-import { FLIGHTS_DATA } from "../components/flight/flights.data";
-import Header from "../components/header/Header";
-import { useAppSelector } from "../hooks/useAppSelector";
+
 import s from "./Favorites.module.scss";
+import { useAppSelector } from "../../hooks/useAppSelector";
+import { FLIGHTS_DATA } from "../../components/flight/flights.data";
+import Header from "../../components/header/Header";
+import { FlightItem } from "../../components/flight/flight-item/FlightItem";
 
 export function Favorites() {
   const favorites = useAppSelector((state) => state.favorites);

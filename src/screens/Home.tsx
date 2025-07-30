@@ -27,26 +27,24 @@ function Home() {
   const [selectedSort, setSelectedSort] = useState<string>(sortByCompany[0]);
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [errors, setErrors] = useState<unknown | null>(null);
   const { theme } = useTheme();
 
   useEffect(() => {
     async function fetchData() {
       try {
         const response = await fetch(theme === "light" ? MAP_LIGHT : MAP_DARK);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status ${response.status}`);
-        }
         const data = await response.json();
         setData(data);
-      } catch (e) {
-        setError(e);
+      } catch (error) {
+        console.log(error);
+        setErrors(error);
       } finally {
         setIsLoading(false);
       }
     }
     fetchData();
-  }, []);
+  }, [theme]);
 
   const togglePopup = () => {
     setIsOpen(true);
@@ -89,8 +87,8 @@ function Home() {
         >
           {isLoading ? (
             <Pleloader />
-          ) : error ? (
-            <Error err={error.message} />
+          ) : errors ? (
+            <Error err={errors} />
           ) : (
             <SkyMap data={data} />
           )}

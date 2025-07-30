@@ -9,10 +9,15 @@ import { ThemeToggle } from "../theme-toggle/ThemeToggle";
 import styles from "./Header.module.scss";
 import { useState } from "react";
 import { MenuBurger } from "../menu-burger/MenuBurger";
-import { Link } from "react-router";
+
 import { PAGE } from "../../config/page.config";
+import { Link, useLocation } from "react-router";
 
 export default function Header() {
+  const location = useLocation();
+  const currentPath = location.pathname;
+
+  console.log(currentPath);
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -24,15 +29,15 @@ export default function Header() {
           SkyTrack
           <img src="logo.svg" alt="logo" />
         </Link>
-        <ul className={styles.list}>
-          <li className={styles.item}>
+        <div className={styles.list}>
+          <Link to={PAGE.HOME} className={styles.item}>
             <House width={18} />
             <span>Home</span>
-          </li>
-          <li className={styles.item}>
+          </Link>
+          <Link to={PAGE.FAVORITES} className={styles.item}>
             <TicketsPlane width={18} />
-            <span>Fligts</span>
-          </li>
+            <span>Favorites</span>
+          </Link>
           <li className={styles.item}>
             <IdCardLanyard width={18} />
             About
@@ -41,17 +46,21 @@ export default function Header() {
             <NotebookTabs width={18} />
             Contacts
           </li>
-        </ul>
+        </div>
         <button className={styles.burgerBtn} onClick={toggleMenu}>
           <Menu />
         </button>
         {isOpen && <MenuBurger onToggle={toggleMenu} />}
-        <div className={styles.icons}>
-          <ThemeToggle />
-          <Link to={PAGE.FAVORITES}>
-            <img className={styles.like} src="like.svg" alt="like" />
-          </Link>
-        </div>
+        {currentPath === "/favorites" ? (
+          ""
+        ) : (
+          <div className={styles.icons}>
+            <ThemeToggle />
+            <Link to={PAGE.FAVORITES}>
+              <img className={styles.like} src="like.svg" alt="like" />
+            </Link>
+          </div>
+        )}
       </div>
     </header>
   );

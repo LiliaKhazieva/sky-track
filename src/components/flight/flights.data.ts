@@ -18,9 +18,7 @@ export const FLIGHTS_DATA: IFlight[] = [
     airline: "TK143",
     company: "Turkey",
     aircraftReg: "TC-JFP",
-    id: 93247,
-    departureTime: "2025-07-04T15:34:00",
-    arrivalTime: "2025-07-04T15:34:20",
+    id: "93247",
     from: {
       city: "Sofia",
       country: "Bulgaria",
@@ -62,9 +60,8 @@ export const FLIGHTS_DATA: IFlight[] = [
     airline: "RN1782",
     aircraftReg: "D-AISP",
     company: "Ireland",
-    id: 7842,
-    departureTime: "2025-07-04T14:31:00",
-    arrivalTime: "2025-07-04T14:31:30",
+    id: "7842",
+
     from: {
       city: "Dublin",
       country: "Ireland",
@@ -106,9 +103,8 @@ export const FLIGHTS_DATA: IFlight[] = [
     airline: "S7124",
     aircraftReg: "RA-73415",
     company: "Russia",
-    id: 88015,
-    departureTime: "2025-07-04T14:31:00",
-    arrivalTime: "2025-07-04T14:32:00",
+    id: "88015",
+
     from: {
       city: "Nice",
       country: "France",
@@ -150,9 +146,7 @@ export const FLIGHTS_DATA: IFlight[] = [
     airline: "LX318",
     aircraftReg: "HB-JHK",
     company: "Switzerland",
-    id: 94102,
-    departureTime: "2025-07-04T11:00:00",
-    arrivalTime: "2025-07-04T12:00:00",
+    id: "94102",
     from: {
       city: "Porto",
       country: "Portugal",
@@ -194,9 +188,8 @@ export const FLIGHTS_DATA: IFlight[] = [
     airline: "LH401",
     aircraftReg: "D-AIXD",
     company: "Germany",
-    id: 90936,
-    departureTime: "2025-07-04T12:20:00",
-    arrivalTime: "2025-07-04T15:00:00",
+    id: "90936",
+
     from: {
       city: "Burgas",
       country: "Bulgaria",

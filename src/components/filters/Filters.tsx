@@ -10,7 +10,6 @@ interface Props {
 
 export function Select({ options, selectedValue, setSelectedValue }: Props) {
   const [isOpen, setIsOpen] = useState(false);
-
   const handleSelect = (option: string) => {
     setSelectedValue(option);
     setIsOpen(false);
