@@ -1,7 +1,6 @@
 import { useSearchParams } from "react-router";
 import styles from "./FlighDetails.module.scss";
 
-import { FLIGHTS_DATA } from "../flights.data";
 import { QUERY_PARAMS_FLIGHT } from "../../../utils/constants/flights.constants";
 
 import { FlightNav } from "../flight-nav/FlightNav";
@@ -11,6 +10,8 @@ import { FlyDistance } from "./FlyDistance";
 import { FlyRoute } from "./FlyRoute";
 import { useEffect, useMemo, useState } from "react";
 import SkeletonDetails from "../../skeletonDetails/SkeletonDetails";
+import type { IFlight } from "../../../types/flight.types";
+import { FLIGHTS_DATA } from "../flights.data";
 
 interface Props {
   onClose: () => void;
@@ -24,7 +25,7 @@ export function FlightDetails({ onClose }: Props) {
   const flight = useMemo(() => {
     if (selectedFlight === null) return FLIGHTS_DATA[0];
     return FLIGHTS_DATA.find(
-      (flight) => flight.id.toString() === selectedFlight
+      (flight: IFlight) => flight.id === selectedFlight
     )!;
   }, [selectedFlight]);
   if (!flight) return null;

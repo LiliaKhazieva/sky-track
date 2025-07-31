@@ -20,7 +20,7 @@ export function FlightList({
   selectedSort,
   togglePopup,
 }: Props) {
-  const updateRef = useRef<string | null>(null);
+  const updateTimeRef = useRef<string | null>(null);
   const now = new Date();
   const formattedDate = format(now, "dd.MM.yyyy HH:mm", { locale: ru });
 
@@ -28,11 +28,10 @@ export function FlightList({
     queryKey: ["items"],
     queryFn: async () => {
       const result = await aviaService.getFlights();
-      updateRef.current = formattedDate;
+      updateTimeRef.current = formattedDate;
       return result;
     },
   });
-
   const filteredItems =
     selectedValue === "All" && selectedSort === "All airlines"
       ? data
@@ -49,9 +48,11 @@ export function FlightList({
           <RefreshCcw />
         </button>
 
-        {updateRef.current && (
+        {updateTimeRef?.current && (
           <div>
-            {isRefetching ? "Updating..." : `Last update: ${updateRef.current}`}
+            {isRefetching
+              ? "Updating..."
+              : `Last update: ${updateTimeRef.current}`}
           </div>
         )}
       </div>

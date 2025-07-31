@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-
+import Header from "../components/header/Header";
 import { FlightList } from "../components/flight/flight-list/FlightList";
 import { FlightDetails } from "../components/flight/flight-details/FlightDetails";
-import Header from "../components/header/Header";
 import { Select } from "../components/filters/Filters";
 import { SkyMap } from "../components/map/SkyMap";
 import { MAP_DARK, MAP_LIGHT } from "../utils/constants/flights.constants";
@@ -88,7 +87,7 @@ function Home() {
           {isLoading ? (
             <Pleloader />
           ) : errors ? (
-            <Error err={errors} />
+            <Error />
           ) : (
             <SkyMap data={data} />
           )}

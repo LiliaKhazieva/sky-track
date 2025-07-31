@@ -1,8 +1,7 @@
 import { CircleAlert } from "lucide-react";
 import styles from "./Error.module.scss";
 
-export function Error({ err }: { err: any }) {
-  console.log(err);
+export function Error() {
   return (
     <div className={styles.error}>
       <div>
