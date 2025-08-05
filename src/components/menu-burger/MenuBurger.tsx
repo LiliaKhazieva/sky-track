@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import s from "./MenuBurger.module.scss";
 import {
   House,
@@ -6,6 +7,7 @@ import {
   SquareX,
   TicketsPlane,
 } from "lucide-react";
+import { PAGE } from "../../config/page.config";
 
 export function MenuBurger({ onToggle }: { onToggle: () => void }) {
   return (
@@ -20,11 +22,13 @@ export function MenuBurger({ onToggle }: { onToggle: () => void }) {
       <ul className={s.list}>
         <li className={s.item}>
           <House width={18} />
-          <span>Home</span>
+          <Link to={PAGE.HOME}>Home</Link>
         </li>
         <li className={s.item}>
           <TicketsPlane width={18} />
-          <span>Fligts</span>
+          <span>
+            <Link to={PAGE.FAVORITES}>Favorites</Link>
+          </span>
         </li>
         <li className={s.item}>
           <IdCardLanyard width={18} />

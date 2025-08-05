@@ -8,6 +8,7 @@ import { useRef } from "react";
 import { PlaneTakeoff, RefreshCcw } from "lucide-react";
 import { format } from "date-fns";
 import { ru } from "date-fns/locale";
+import type { IFlight } from "../../../types/flight.types";
 
 interface Props {
   selectedValue: string;
@@ -32,7 +33,7 @@ export function FlightList({
       return result;
     },
   });
-  const filteredItems =
+  const filteredItems: IFlight[] =
     selectedValue === "All" && selectedSort === "All airlines"
       ? data
       : data.filter((item: any) => {
@@ -59,14 +60,14 @@ export function FlightList({
 
       <ul className={styles.list}>
         {isPending ? (
-          [...Array(5)].map((_) => <Skeleton />)
+          [...Array(5)].map((_, i) => <Skeleton key={i} />)
         ) : filteredItems.length === 0 ? (
           <div className={styles.noFilters}>
             Нет рейсов по выбранному фильтру
             <PlaneTakeoff color="#D66" />
           </div>
         ) : (
-          filteredItems.map((item: any) => (
+          filteredItems.map((item) => (
             <FlightItem key={item.id} item={item} togglePopup={togglePopup} />
           ))
         )}

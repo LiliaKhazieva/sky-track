@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import type { IFlight } from "../../types/flight.types";
 
 const getCurrentCoordinates = (

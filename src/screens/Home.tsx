@@ -28,7 +28,7 @@ function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [errors, setErrors] = useState<unknown | null>(null);
   const { theme } = useTheme();
-
+  let isHidden = false;
   useEffect(() => {
     async function fetchData() {
       try {
