@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import Home from "./screens/Home.tsx";
-import { BrowserRouter, Route, Routes } from "react-router";
+import { HashRouter, Route, Routes } from "react-router";
 import { ThemeProvider } from "./providers/theme/ThemeProvider.tsx";
 import { Provider } from "react-redux";
 import { store } from "./store/index.ts";
@@ -18,12 +18,12 @@ createRoot(document.getElementById("root")!).render(
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
         <Provider store={store}>
-          <BrowserRouter>
+          <HashRouter>
             <Routes>
               <Route path={PAGE.HOME} element={<Home />} />
               <Route path={PAGE.FAVORITES} element={<Favorites />} />
             </Routes>
-          </BrowserRouter>
+          </HashRouter>
         </Provider>
       </ThemeProvider>
     </QueryClientProvider>
