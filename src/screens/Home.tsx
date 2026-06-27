@@ -31,7 +31,7 @@ function Home() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch(theme === "light" ? MAP_LIGHT : MAP_DARK);
+        const response = await fetch(theme === "dark" ? MAP_DARK : MAP_LIGHT);
         const data = await response.json();
         setData(data);
       } catch (error) {
