@@ -25,7 +25,7 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.wrapper}>
         <Link to={PAGE.HOME} className={styles.logo}>
-          SkyTrack
+          <span>SkyTrack</span>
           <img src="logo.svg" alt="logo" />
         </Link>
         <div className={styles.list}>
